@@ -1,0 +1,46 @@
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+    /* background-color:blue; */
+}
+
+.f1{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100px;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+.first{
+    text-align: center;
+    /* margin:30px;   */
+    background-color:black;
+}
+
+.icon li {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:whitesmoke;
+    display:inline-block;
+    padding:0px 20px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.icon li a:hover{
+    color:red;
+}
+
+.icon li a{
+    color:wheat;
+    text-shadow: 4px 2px 8px skyblue;
+    font-size: 25;
+
+}
