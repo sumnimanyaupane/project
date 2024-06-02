@@ -1,13 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
-  User: shital-nyaupane
-  Date: 5/5/24
-  Time: 8:15 AM
+  User: shova
+  Date: 25/05/2024
+  Time: 8:16 am
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <title>Login</title>
+    <title>Title</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,22 +61,20 @@
     </style>
 </head>
 <body>
-<%--<h2>Login Form</h2>--%>
+
 <div class="login-container">
     <h2>Login</h2>
-    <form class="login-form" action="login1" method="post">
-        <label for="username">username:</label>
-        <input type="text" id="username" name="username" required>
-
+    <form class="login-form" action="adminlogin" method="post">
         <label for="email">email:</label>
         <input type="email" id="email" name="email" required>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <input type="submit" value="Login" class="loginbtn">
-        <p>already have an account?<a href="signup.jsp">signin</a></p>
 
     </form>
 </div>
+
 </body>
 </html>
+

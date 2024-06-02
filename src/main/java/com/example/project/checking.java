@@ -12,22 +12,38 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-@WebServlet("/Checking")
-public class Checking extends HttpServlet {
+@WebServlet("/checking")
+public class checking extends HttpServlet {
 //    private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException , ServletException {
         String roomtype = request.getParameter("roomtype");
+//        String status = request.getParameter("status");
+
         if (validate(roomtype)) {
-            response.sendRedirect("pricing.jsp");
+            switch (roomtype) {
+                case "SingleRoom101":
+                case "SingleRoom103":
+                case "SingleRoom102":
+                    response.sendRedirect("RoomBooking.jsp");
+                    break;
+                case "DoubleRoom201":
+                case "DoubleRoom202":
+                case "DoubleRoom203":
+                    response.sendRedirect("price.jsp");
+                    break;
+                default:
+                    response.sendRedirect("error.jsp");
+                    break;
+            }
         }
-        else {
-            response.sendRedirect("error.jsp");
-        }
+//        else {
+//            response.sendRedirect("error.jsp");
+//        }
     }
 
-    private boolean validate(String roomtype) {
+    private boolean validate(String roomtype ) {
         String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
         String dbUsername = "postgres";
         String dbPassword = "postgres";
@@ -35,7 +51,7 @@ public class Checking extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword) ;
-            String sql = "SELECT * FROM checking WHERE roomtype= ?";
+            String sql = "SELECT * FROM checking WHERE roomtype= ? and status='available' ";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, roomtype);
             ResultSet result = statement.executeQuery();
@@ -46,5 +62,8 @@ public class Checking extends HttpServlet {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+
+
     }
 }

@@ -17,24 +17,24 @@
 <body>
 <div class="container mt-6">
     <p class="text1">
-        PRICING SYSTEM</p>
+      DIFFERENT VARIETIES OF SINGLE BEDROOM AND PRICING SYSTEM </p>
     <hr></div>
 <div class="row">
     <div class="col-sm-6 mb-4 mb-sm-0">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">single bed room</h5>
+                <h5 class="card-title">single bed room1</h5>
                 <pre class="card-text">1 guest.
           Rs.2000 per night
         </pre>
-                <a href="RoomBooking.jsp" class="btn btn-primary">BOOK NOW!!</a>
+                <a href="RoomBooking.jsp" class="btn btn-primary" tabindex="-1">BOOK NOW!!</a>
             </div>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">double bed room</h5>
+                <h5 class="card-title">single bed room2</h5>
                 <pre class="card-text">1 guest.
           Rs.1000 per night
         </pre>
@@ -46,7 +46,7 @@
     <div class="col-sm-6 ">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">balcony facing room</h5>
+                <h5 class="card-title">single bed room3</h5>
                 <pre class="card-text">1 guest.
         Rs.1000 per night
       </pre>
@@ -58,8 +58,8 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">couple above 60</h5>
-                <pre class="card-text">free welcome drink
+                <h5 class="card-title">single bed room4</h5>
+                <pre class="card-text">1 guest
         Rs.2000 per night
       </pre>
                 <a href="RoomBooking.jsp" class="btn btn-primary">BOOK NOW!!</a>
@@ -69,9 +69,9 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">foreigner outside asia</h5>
-                <pre class="card-text">free welcome drink and snacks
-        Rs.2000 per night
+                <h5 class="card-title">single bed room5</h5>
+                <pre class="card-text">1 guest
+        Rs.2000 per  night
       </pre>
                 <a href="RoomBooking.jsp" class="btn btn-primary">BOOK NOW!!</a>
             </div>
@@ -80,9 +80,9 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">foreigner inside asia</h5>
-                <pre class="card-text">free welcome drink and snacks
-        Rs.4000 per night
+                <h5 class="card-title">single bed room6</h5>
+                <pre class="card-text">1 guest
+        Rs.3000 per  night
       </pre>
                 <a href="RoomBooking.jsp" class="btn btn-primary">BOOK NOW!!</a>
             </div>
@@ -91,9 +91,9 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">HoneyMoon couple</h5>
-                <pre class="card-text">free welcome drink and snacks with special decoration of room.
-        Rs.5000 per night
+                <h5 class="card-title">single bed room7</h5>
+                <pre class="card-text">1 guest
+        Rs.1000 per  night
       </pre>
                 <a href="RoomBooking.jsp" class="btn btn-primary">BOOK NOW!!</a>
             </div>
@@ -102,11 +102,11 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">college Students</h5>
-                <pre class="card-text">1 Student
-        Rs.1000 per student
+                <h5 class="card-title">single bed room8</h5>
+                <pre class="card-text">1 guest
+        Rs.5000 per  night
       </pre>
-                <a href="RoomBooking.jsp" class="btn btn-primary">BOOK NOW!!</a>
+                <a href="RoomBooking.jsp" class="btn btn-primary" >BOOK NOW!!</a>
             </div>
         </div>
     </div>

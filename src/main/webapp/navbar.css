@@ -7,6 +7,8 @@ body {
     background-color:rgb(32, 47, 73);
 font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
+    /*position: fixed;*/
+    overflow: hidden;
 }
 
 .nav ul {
@@ -28,3 +30,19 @@ font-family: 'Times New Roman', Times, serif;
     padding-right: 48px;
      display: grid;
 }
+
+/*.content {*/
+/*    padding: 16px;*/
+/*}*/
+
+/*.sticky {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.sticky + .content {*/
+/*    padding-top: 60px;*/
+/*}*/
+
+

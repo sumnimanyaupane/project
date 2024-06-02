@@ -68,15 +68,29 @@
 <body>
 <form  method="post" class="dropdown-form" action="BookingServlet">
         <div class="select">
-        <label for="numberofpeople">number of person:</label>
-        <input type="text" id="numberofpeople" name="no of person:" required>
+        <label for="numberofpeople">numberofpeople:</label>
+        <input type="text" id="numberofpeople" name="numberofpeople" required>
         <br>
-        <label for="checkindate">Booking date:</label>
-        <input type="date" id="checkindate" name="Booking date:" required>
+
+        <label for="checkindate">checkindate:</label>
+        <input type="date" id="checkindate" name="checkindate" required>
         <br>
-        <label for="checkoutdate">CheckOut Date:</label>
-        <input type="date" id="checkoutdate" name="CheckOut Date:" required>
+
+        <label for="checkoutdate">checkoutdate:</label>
+        <input type="date" id="checkoutdate" name="checkoutdate" required>
         <br>
+
+<%--            <label for="roomtype">roomtype:</label>--%>
+<%--            <select name="roomtype" id="roomtype" class="dropdown-select">--%>
+<%--                <option value="SingleRoom103">SingleRoom103</option>--%>
+<%--                <option value="SingleRoom102">SingleRoom102</option>--%>
+<%--                <option value="SingleRoom101">SingleRoom101</option>--%>
+<%--                <option value="DoubleRoom203">DoubleRoom203</option>--%>
+<%--                <option value="DoubleRoom202">DoubleRoom202</option>--%>
+<%--                <option value="DoubleRoom201">DoubleRoom201</option>--%>
+<%--            </select>--%>
+<%--            <br>--%>
+
         </div>
     <input type="submit" value="continue" class="submit-button">
 </form>

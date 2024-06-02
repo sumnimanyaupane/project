@@ -22,6 +22,7 @@ public class login extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+
         // Database connection parameters
         String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
