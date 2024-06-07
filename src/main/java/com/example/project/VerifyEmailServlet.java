@@ -48,7 +48,8 @@ public class VerifyEmailServlet extends HttpServlet {
         String password = "postgres";
 
         Connection connection = DriverManager.getConnection(url, user, password);
-        String query = "SELECT * FROM email_verification WHERE token = ?";
+
+        String query = "SELECT * FROM logindata WHERE token = ?";
 
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, token);
@@ -56,6 +57,13 @@ public class VerifyEmailServlet extends HttpServlet {
         ResultSet resultSet = statement.executeQuery();
 
         boolean isValid = resultSet.next();
+        if (isValid) {
+            String updateQuery = "UPDATE logindata SET verified = TRUE WHERE token = ?";
+            PreparedStatement updateStatement = connection.prepareStatement(updateQuery);
+            updateStatement.setString(1, token);
+            updateStatement.executeUpdate();
+            updateStatement.close();
+        }
 
         resultSet.close();
         statement.close();

@@ -28,6 +28,8 @@ public class login extends HttpServlet {
         String user = "postgres";
         String dbPassword = "postgres";
 
+
+
         try {
             // Connect to the database
             Class.forName("org.postgresql.Driver");
@@ -40,13 +42,17 @@ public class login extends HttpServlet {
             stmt.setString(3, password);
             int rows = stmt.executeUpdate();
 
+
+
             if (rows > 0) {
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
                 response.sendRedirect("RoomChecking.jsp");
             } else {
-                out.println("<h2>Registration failed</h2>");
+                response.sendRedirect("error.jsp");
+//                out.println("<h2>Registration failed</h2>");
             }
 
-            // Close the connection
             con.close();
         } catch (Exception e) {
             out.println(e);

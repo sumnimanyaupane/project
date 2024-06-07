@@ -78,6 +78,10 @@
         <option value="DoubleRoom201">DoubleRoom201</option>
     </select>
     <br>
+
+    <label for="checkindate">checkindate:</label>
+    <input type="date" id="checkindate" name="checkindate" required>
+    <br>
     <input type="submit" value="Check Availability" class="submit-button">
 </form>
 </body>

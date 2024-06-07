@@ -5,11 +5,8 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.io.PrintWriter;
+import java.sql.*;
 
 
 @WebServlet("/checking")
@@ -18,10 +15,16 @@ public class checking extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException , ServletException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
         String roomtype = request.getParameter("roomtype");
+        String checkindate = request.getParameter("checkindate");
 //        String status = request.getParameter("status");
 
-        if (validate(roomtype)) {
+        if (validate(roomtype,checkindate)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("roomtype", roomtype);
+            session.setAttribute("checkindate", checkindate);
             switch (roomtype) {
                 case "SingleRoom101":
                 case "SingleRoom103":
@@ -38,12 +41,15 @@ public class checking extends HttpServlet {
                     break;
             }
         }
-//        else {
-//            response.sendRedirect("error.jsp");
-//        }
+        else {
+            response.sendRedirect("error.jsp");
+        }
     }
 
-    private boolean validate(String roomtype ) {
+
+
+
+    private boolean validate(String roomtype , String checkindate) {
         String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
         String dbUsername = "postgres";
         String dbPassword = "postgres";
@@ -51,11 +57,14 @@ public class checking extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword) ;
-            String sql = "SELECT * FROM checking WHERE roomtype= ? and status='available' ";
+            String sql = "SELECT * FROM checking WHERE roomtype= ? and status='available' and checkindate= ?";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, roomtype);
+            statement.setDate(2,Date.valueOf(checkindate));
             ResultSet result = statement.executeQuery();
             return result.next(); // Returns true if there is a matching row in the database
+
+
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;

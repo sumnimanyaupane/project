@@ -62,8 +62,8 @@
 <body>
 <%--<h2>Login Form</h2>--%>
 <div class="login-container">
-    <h2>Login</h2>
-    <form class="login-form" action="login1" method="post">
+    <h2>LOGIN</h2>
+    <form class="login-form" action="login" method="post">
         <label for="username">username:</label>
         <input type="text" id="username" name="username" required>
 
@@ -73,7 +73,7 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <input type="submit" value="Login" class="loginbtn">
-        <p>already have an account?<a href="signup.jsp">signin</a></p>
+        <p>already have an account?<a href="signin.jsp">signin</a></p>
 
     </form>
 </div>

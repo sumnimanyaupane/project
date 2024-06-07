@@ -13,9 +13,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-@WebServlet("/signup")
-public class signup extends HttpServlet {
-//    private static final long serialVersionUID = 1L;
+@WebServlet("/signin")
+public class signin extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException , ServletException {
@@ -23,6 +22,7 @@ public class signup extends HttpServlet {
         String password = request.getParameter("password");
 
         if (validate(email, password)) {
+
             response.sendRedirect("RoomChecking.jsp");
         }
         else {
@@ -43,7 +43,7 @@ public class signup extends HttpServlet {
             statement.setString(1, email);
             statement.setString(2, password);
             ResultSet result = statement.executeQuery();
-            return result.next(); // Returns true if there is a matching row in the database
+            return result.next();
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;

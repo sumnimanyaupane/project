@@ -19,8 +19,7 @@
 </head>
 <body>
 <!-- navbar -->
-<%--<div id="nav1">--%>
-<%--<div id="navbar">--%>
+
     <div class="nav">
     <ul>
         <li><a href="#"><pre>
@@ -37,9 +36,7 @@
         <a href="#"><img src="Location.png" alt="Logo" class="logo"></a>
     </ul>
     </div>
-<%--</div>--%>
 
-<%--<div class="content">--%>
 
 <%--text image--%>
 <div class="container">
@@ -188,22 +185,6 @@
     </div>
 </div>
 
-<%--</div>--%>
-
-<%--<script>--%>
-<%--    window.onscroll = function() {myFunction()};--%>
-
-<%--    var navbar = document.getElementById("navbar");--%>
-<%--    var sticky = navbar.offsetTop;--%>
-
-<%--    function myFunction() {--%>
-<%--        if (window.pageYOffset >= sticky) {--%>
-<%--            navbar.classList.add("sticky")--%>
-<%--        } else {--%>
-<%--            navbar.classList.remove("sticky");--%>
-<%--        }--%>
-<%--    }--%>
-<%--</script>--%>
 
 
 <!-- footer -->

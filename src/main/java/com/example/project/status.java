@@ -29,7 +29,8 @@ public class status extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-            String sql =" UPDATE checking SET status = 'booked' WHERE roomtype = ?;";
+//            String sql =" UPDATE checking SET status = 'booked' WHERE roomtype = booking.roomtype;";
+            String sql ="UPDATE checking SET status = 'booked' FROM booking WHERE checking.roomtype = booking.roomtype; ";
             PreparedStatement statement = conn.prepareStatement(sql);
 
 //            ResultSet result = statement.executeQuery();

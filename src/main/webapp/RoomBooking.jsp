@@ -72,25 +72,17 @@
         <input type="text" id="numberofpeople" name="numberofpeople" required>
         <br>
 
-        <label for="checkindate">checkindate:</label>
-        <input type="date" id="checkindate" name="checkindate" required>
-        <br>
+<%--        <label for="checkindate">checkindate:</label>--%>
+<%--        <input type="date" id="checkindate" name="checkindate" required>--%>
+<%--        <br>--%>
 
         <label for="checkoutdate">checkoutdate:</label>
         <input type="date" id="checkoutdate" name="checkoutdate" required>
         <br>
 
-<%--            <label for="roomtype">roomtype:</label>--%>
-<%--            <select name="roomtype" id="roomtype" class="dropdown-select">--%>
-<%--                <option value="SingleRoom103">SingleRoom103</option>--%>
-<%--                <option value="SingleRoom102">SingleRoom102</option>--%>
-<%--                <option value="SingleRoom101">SingleRoom101</option>--%>
-<%--                <option value="DoubleRoom203">DoubleRoom203</option>--%>
-<%--                <option value="DoubleRoom202">DoubleRoom202</option>--%>
-<%--                <option value="DoubleRoom201">DoubleRoom201</option>--%>
-<%--            </select>--%>
-<%--            <br>--%>
-
+            <label for="contact">contact:</label>
+            <input type="text" id="contact" name="contact" required>
+            <br>
         </div>
     <input type="submit" value="continue" class="submit-button">
 </form>

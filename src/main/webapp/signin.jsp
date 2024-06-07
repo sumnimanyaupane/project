@@ -63,8 +63,8 @@
 <body>
 
     <div class="login-container">
-        <h2>Login</h2>
-        <form class="login-form" action="signup" method="post">
+        <h2>SIGNIN</h2>
+        <form class="login-form" action="signin" method="post">
             <label for="email">email:</label>
             <input type="email" id="email" name="email" required>
 

@@ -37,10 +37,10 @@ public class adminlogin extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword) ;
-            String sql = "SELECT * FROM admin WHERE email =? AND password= ?";
+            String sql = "SELECT * FROM logindata WHERE email ='shovaneupane189@gmail.com' AND password= 'shova123'";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, email);
-            statement.setString(2, password);
+//            statement.setString(1, email);
+//            statement.setString(2, password);
             ResultSet result = statement.executeQuery();
             return result.next(); // Returns true if there is a matching row in the database
         } catch (SQLException ex) {

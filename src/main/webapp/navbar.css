@@ -7,8 +7,10 @@ body {
     background-color:rgb(32, 47, 73);
 font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    /*position: fixed;*/
+    position: fixed;
     overflow: hidden;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav ul {
@@ -31,18 +33,18 @@ font-family: 'Times New Roman', Times, serif;
      display: grid;
 }
 
-/*.content {*/
-/*    padding: 16px;*/
-/*}*/
+.content {
+    padding: 16px;
+}
 
-/*.sticky {*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    width: 100%;*/
-/*}*/
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
-/*.sticky + .content {*/
-/*    padding-top: 60px;*/
-/*}*/
+.sticky + .content {
+    padding-top: 60px;
+}
 
 

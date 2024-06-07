@@ -38,7 +38,8 @@
 </head>
 <body>
 <form  method="post" class="dropdown-form" action="status">
-<input type="submit" value="tap to continue to view page" class="submit-button">
+<input type="submit" value="SUCCESSFULLY BOOKED!!!
+tap to continue to view home page" class="submit-button">
 </form>
 </body>
 </html>

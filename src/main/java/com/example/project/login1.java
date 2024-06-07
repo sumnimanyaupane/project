@@ -74,13 +74,16 @@ public class login1 extends HttpServlet {
     }
 
     private void sendVerificationEmail(String recipientEmail, String token) throws MessagingException {
-        String host = "smtp.gmail.com"; // Replace with your SMTP server
-        final String user = "shovaneupane189@gmail.com";
-        final String password = "shova@123";
+        String host = "smtp.gmail.com";
+        final String user = "shovaneupane189@gmail.com"; // Replace with your email
+        final String password = "vampiregirl@123"; // Replace with your email password
 
         Properties properties = new Properties();
-        properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true"); // Enable TLS
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "587"); // TLS port
+        properties.put("mail.debug", "true"); // Enable debug
 
         Session session = Session.getInstance(properties, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -96,4 +99,5 @@ public class login1 extends HttpServlet {
 
         Transport.send(message);
     }
-}
+    }
+
