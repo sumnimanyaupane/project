@@ -15,7 +15,6 @@ import java.sql.SQLException;
 
 @WebServlet("/status")
 public class status extends HttpServlet {
-//    private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException , ServletException {
@@ -40,7 +39,7 @@ public class status extends HttpServlet {
             if (rows > 0) {
                 response.sendRedirect("navbar.jsp");
             } else {
-                out.println("<h2>booking failed</h2>");
+                response.sendRedirect("error.jsp");
             }
 
         } catch (SQLException ex) {

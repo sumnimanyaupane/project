@@ -80,3 +80,7 @@ h2 {
     background-size: cover;
     background-position: center;
 }
+
+.overlay h1{
+    color: #333333;
+}

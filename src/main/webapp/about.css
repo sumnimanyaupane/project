@@ -1,0 +1,33 @@
+
+/*body {*/
+/*    font-family: fantasy;*/
+/*}*/
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color:black;
+    background-color: whitesmoke;
+    font-family:"Times New Roman";
+}
+.image {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+.text {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+.about{
+    padding-top: 10px;
+    font-size: 20px;
+}
+

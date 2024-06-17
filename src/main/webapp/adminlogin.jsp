@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="nav.jsp" %>
 <html>
 <head>
     <title>Title</title>
@@ -63,7 +64,7 @@
 <body>
 
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>Admin Login</h2>
     <form class="login-form" action="adminlogin" method="post">
         <label for="email">email:</label>
         <input type="email" id="email" name="email" required>

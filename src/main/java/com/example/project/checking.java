@@ -11,45 +11,25 @@ import java.sql.*;
 
 @WebServlet("/checking")
 public class checking extends HttpServlet {
-//    private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException , ServletException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String roomtype = request.getParameter("roomtype");
-        String checkindate = request.getParameter("checkindate");
-//        String status = request.getParameter("status");
 
-        if (validate(roomtype,checkindate)) {
+        if (validate(roomtype)) {
             HttpSession session = request.getSession();
             session.setAttribute("roomtype", roomtype);
-            session.setAttribute("checkindate", checkindate);
-            switch (roomtype) {
-                case "SingleRoom101":
-                case "SingleRoom103":
-                case "SingleRoom102":
-                    response.sendRedirect("RoomBooking.jsp");
-                    break;
-                case "DoubleRoom201":
-                case "DoubleRoom202":
-                case "DoubleRoom203":
-                    response.sendRedirect("price.jsp");
-                    break;
-                default:
-                    response.sendRedirect("error.jsp");
-                    break;
-            }
+            response.sendRedirect("date.jsp");
         }
         else {
-            response.sendRedirect("error.jsp");
+            request.setAttribute("errorMessage", "not available");
+            request.getRequestDispatcher("RoomChecking.jsp").forward(request, response);
         }
     }
 
-
-
-
-    private boolean validate(String roomtype , String checkindate) {
+    private boolean validate(String roomtype) {
         String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
         String dbUsername = "postgres";
         String dbPassword = "postgres";
@@ -57,12 +37,12 @@ public class checking extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword) ;
-            String sql = "SELECT * FROM checking WHERE roomtype= ? and status='available' and checkindate= ?";
+//            String sql = "SELECT checkindate, checkoutdate FROM booking WHERE roomtype = ? and (? < checkoutdate AND ? > checkindate) ";
+            String sql = "SELECT * FROM checking WHERE roomtype= ?  ";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, roomtype);
-            statement.setDate(2,Date.valueOf(checkindate));
             ResultSet result = statement.executeQuery();
-            return result.next(); // Returns true if there is a matching row in the database
+            return result.next();
 
 
         } catch (SQLException ex) {

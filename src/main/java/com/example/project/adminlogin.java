@@ -14,7 +14,6 @@ import java.sql.SQLException;
 
 @WebServlet("/adminlogin")
 public class adminlogin extends HttpServlet {
-//    private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException , ServletException {
@@ -37,12 +36,19 @@ public class adminlogin extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword) ;
-            String sql = "SELECT * FROM logindata WHERE email ='shovaneupane189@gmail.com' AND password= 'shova123'";
+            String sql = "SELECT * FROM logindata WHERE email ='shovaneupane189@gmail.com';";
             PreparedStatement statement = conn.prepareStatement(sql);
 //            statement.setString(1, email);
 //            statement.setString(2, password);
             ResultSet result = statement.executeQuery();
-            return result.next(); // Returns true if there is a matching row in the database
+            String retUser = result.getString("email");
+            String retPass = result.getString("password");
+            if (retUser.equals(email) && retPass.equals(password)) {
+                return true;
+            }
+            return false;
+
+            //return result.next(); // Returns true if there is a matching row in the database
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;

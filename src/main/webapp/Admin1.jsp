@@ -1,16 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: shova
-  Date: 25/05/2024
-  Time: 8:59 am
+  Date: 27/06/2024
+  Time: 5:42 pm
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
-<%@ include file="nav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Room List</title>
+    <title>Information Details</title>
     <style>
         body {
             display: flex;
@@ -21,8 +20,25 @@
             background-color: #f0f0f0;
             margin: 0;
         }
+        nav {
+            width: 100%;
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
         table {
-            width: 50%;
+            width: 80%;
             border-collapse: collapse;
             margin: 20px 0;
             background-color: white;
@@ -38,26 +54,30 @@
             background-color: #4CAF50;
             color: white;
         }
-        .loginbtn {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .loginbtn:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
-<h1>Room List</h1>
+<nav>
+    <a href="navbar.jsp">Home</a>
+
+    <a href="Admin2.jsp">checking Page</a>
+    <pre>Hotel Srikhanda
+        Battisputali,Kathmandu
+    </pre>
+</nav>
+<h1>Information Details</h1>
 <table>
     <thead>
     <tr>
-        <th>Room Type</th>
-        <th></th>
+        <th>id</th>
+        <th>numberofpeople</th>
+        <th>checkindate</th>
+        <th>checkoutdate</th>
+        <th>fullname</th>
+        <th>roomtype</th>
+        <th>contact</th>
+        <th>address</th>
+        <th>nationality</th>
     </tr>
     </thead>
     <tbody>
@@ -74,13 +94,20 @@
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM checking");
+            rs = stmt.executeQuery("SELECT * FROM booking");
 
             while (rs.next()) {
     %>
     <tr>
+        <td><%= rs.getString("id") %></td>
+        <td><%= rs.getString("numberofpeople") %></td>
+        <td><%= rs.getString("checkindate") %></td>
+        <td><%= rs.getString("checkoutdate") %></td>
+        <td><%= rs.getString("fullname") %></td>
         <td><%= rs.getString("roomtype") %></td>
-        <td><a href="#">edit/delete</a></td>
+        <td><%= rs.getString("contact") %></td>
+        <td><%= rs.getString("address") %></td>
+        <td><%= rs.getString("nationality") %></td>
     </tr>
     <%
             }
@@ -98,9 +125,5 @@
     %>
     </tbody>
 </table>
-<form action="AdminTableBooking.jsp">
-    <input type="submit" value="Go to booking table" class="loginbtn">
-</form>
 </body>
 </html>
-

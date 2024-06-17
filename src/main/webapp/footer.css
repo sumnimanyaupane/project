@@ -45,3 +45,27 @@ body{
     font-size: 20px;
 
 }
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #cccccc;
+     margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: #333333;
+    opacity: 0.9;
+}
+.socialIcons a:hover{
+    background-color: black;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}

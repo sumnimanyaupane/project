@@ -1,13 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: shital-nyaupane
-  Date: 5/5/24
-  Time: 8:15 AM
+  Date: 2/17/24
+  Time: 11:12 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="nav.jsp" %>
+<html>
 <head>
-    <title>Login</title>
+    <title>Title</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,22 +62,26 @@
     </style>
 </head>
 <body>
-<%--<h2>Login Form</h2>--%>
-<div class="login-container">
-    <h2>LOGIN</h2>
-    <form class="login-form" action="login" method="post">
-        <label for="username">username:</label>
-        <input type="text" id="username" name="username" required>
 
-        <label for="email">email:</label>
-        <input type="email" id="email" name="email" required>
+    <div class="login-container">
+        <h2>LOGIN</h2>
+        <form class="login-form" action="login" method="post">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Login" class="loginbtn">
-        <p>already have an account?<a href="signin.jsp">signin</a></p>
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email" required>
 
-    </form>
-</div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login" class="loginbtn">
+
+        </form>
+    </div>
+
+    <%
+        String errorMessage = (String) request.getAttribute("errorMessage");
+        if (errorMessage != null) {
+            out.println("<p style='color:red'>" + errorMessage + "</p>");
+        }
+    %>
 </body>
 </html>

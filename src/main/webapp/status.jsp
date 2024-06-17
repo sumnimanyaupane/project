@@ -11,7 +11,7 @@
     <title>Title</title>
     <style>
         .dropdown-form {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 20px;
             padding: 10px;
             border: 1px solid #ccc;
@@ -37,9 +37,10 @@
     </style>
 </head>
 <body>
-<form  method="post" class="dropdown-form" action="status">
-<input type="submit" value="SUCCESSFULLY BOOKED!!!
-tap to continue to view home page" class="submit-button">
+<form  method="post" class="dropdown-form" action="details.jsp">
+    <p>"SUCCESSFULLY BOOKED!!!
+       click on continue to view home page"</p>
+<input type="submit" value="continue" class="submit-button" >
 </form>
 </body>
 </html>

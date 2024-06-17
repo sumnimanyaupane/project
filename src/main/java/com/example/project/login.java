@@ -1,63 +1,59 @@
 package com.example.project;
 
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+import javax.swing.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static java.lang.System.out;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
 
-        // Retrieve form data
-        String username = request.getParameter("username");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException , ServletException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        if (validate(email, password)) {
+            HttpSession session = request.getSession();
+            response.sendRedirect("RoomChecking.jsp");
+        }
+        else {
+            request.setAttribute("errorMessage", "Invalid email or password");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
 
-        // Database connection parameters
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
+        }
+    }
+
+    private boolean validate(String email, String password) {
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        String dbUsername = "postgres";
         String dbPassword = "postgres";
 
-
-
         try {
-            // Connect to the database
             Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection(url, user, dbPassword);
-
-            // Insert user data into the database
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO logindata (username,email, password) VALUES(?,?,?)");
-            stmt.setString(1, username);
-            stmt.setString(2, email);
-            stmt.setString(3, password);
-            int rows = stmt.executeUpdate();
-
-
-
-            if (rows > 0) {
-                HttpSession session = request.getSession();
-                session.setAttribute("username", username);
-                response.sendRedirect("RoomChecking.jsp");
-            } else {
-                response.sendRedirect("error.jsp");
-//                out.println("<h2>Registration failed</h2>");
-            }
-
-            con.close();
-        } catch (Exception e) {
-            out.println(e);
+            Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword) ;
+           String sql = "SELECT * FROM logindata WHERE email =? AND password= ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, email);
+            statement.setString(2, password);
+            ResultSet result = statement.executeQuery();
+            return result.next();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-
-        out.close();
     }
 }

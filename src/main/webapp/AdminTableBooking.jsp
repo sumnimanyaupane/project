@@ -6,34 +6,55 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
+<%@ include file="nav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>information details</title>
+    <title>Information Details</title>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
         table {
-            width: 50%;
+            width: 80%;
             border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
         }
         table, th, td {
-            border: 2px solid black;
+            border: 3px solid #4CAF50;
         }
         th, td {
             padding: 15px;
             text-align: left;
         }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
     </style>
 </head>
 <body>
-<h1>information details</h1>
+
+<h1>Information Details</h1>
 <table>
     <thead>
     <tr>
+        <th>id</th>
         <th>numberofpeople</th>
         <th>checkindate</th>
         <th>checkoutdate</th>
-        <th>username</th>
+        <th>fullname</th>
         <th>roomtype</th>
+        <th>contact</th>
+        <th>address</th>
+        <th>nationality</th>
     </tr>
     </thead>
     <tbody>
@@ -47,21 +68,23 @@
         String PASSWORD = "postgres";
 
         try {
-
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(URL,USER,PASSWORD);
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
             stmt = conn.createStatement();
             rs = stmt.executeQuery("SELECT * FROM booking");
 
             while (rs.next()) {
-//
     %>
     <tr>
+        <td><%= rs.getString("id") %></td>
         <td><%= rs.getString("numberofpeople") %></td>
         <td><%= rs.getString("checkindate") %></td>
         <td><%= rs.getString("checkoutdate") %></td>
-        <td><%= rs.getString("username") %></td>
+        <td><%= rs.getString("fullname") %></td>
         <td><%= rs.getString("roomtype") %></td>
+        <td><%= rs.getString("contact") %></td>
+        <td><%= rs.getString("address") %></td>
+        <td><%= rs.getString("nationality") %></td>
     </tr>
     <%
             }
@@ -81,4 +104,3 @@
 </table>
 </body>
 </html>
-

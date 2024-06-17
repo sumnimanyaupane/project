@@ -1,106 +1,53 @@
 <%--
   Created by IntelliJ IDEA.
   User: shova
-  Date: 27/05/2024
-  Time: 7:21 pm
+  Date: 27/06/2024
+  Time: 8:31 pm
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            font-size: 28px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .header {
-            background-color: #f1f1f1;
-            padding: 30px;
-            text-align: center;
-        }
-
-        #navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        #navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        #navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        #navbar a.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-
-        .content {
-            padding: 16px;
-        }
-
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .sticky + .content {
-            padding-top: 60px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="nav.css">
+<%--    <link rel="stylesheet" href="footer.css">--%>
 </head>
 <body>
+<nav class="navbar">
+    <ul>
+        <li><a href="navbar.jsp"><pre>
+                 HOTEl SRIKHANDA
+                 Battishputali,Kathmandu
+</pre> </a></li>
+        <li><a href="price.jsp"><pre>
+            Price
+        </pre></a></li>
+<%--        <li><a href="register.jsp"> <input type="submit" value="BOOK " class="book"> </a></li>--%>
+        <li><a href="adminlogin.jsp"><pre>
+            Admin
+        </pre></a></li>
+    </ul>
+</nav>
 
-<div class="header">
-    <h2>Scroll Down</h2>
-    <p>Scroll down to see the sticky effect.</p>
-</div>
 
-<div id="navbar">
-    <a class="active" href="javascript:void(0)">Home</a>
-    <a href="javascript:void(0)">News</a>
-    <a href="javascript:void(0)">Contact</a>
-</div>
 
-<div class="content">
-    <h3>Sticky Navigation Example</h3>
-    <p>The navbar will stick to the top when you reach its scroll position.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>
 
-<script>
-    window.onscroll = function() {myFunction()};
 
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-
-    function myFunction() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-        }
-    }
-</script>
-
+<%--<!-- footer -->--%>
+<%--        <div class="footerContainer">--%>
+<%--            <div class="socialIcons">--%>
+<%--                <a href=""><i class="fa-brands fa-facebook"></i></a>--%>
+<%--                <a href=""><i class="fa-brands fa-instagram"></i></a>--%>
+<%--                <a href=""><i class="fa-brands fa-twitter"></i></a>--%>
+<%--                <a href=""><i class="fa-brands fa-google-plus"></i></a>--%>
+<%--                <a href=""><i class="fa-brands fa-youtube"></i></a>--%>
+<%--            </div>--%>
+<%--            <div class="footerBottom">--%>
+<%--                <p>Copyright &copy;2024; Designed by <span class="designer">Shova</span></p>--%>
+<%--            </div>--%>
+<%--        </div>--%>
 </body>
 </html>
+

@@ -15,7 +15,7 @@
 <!--    </servlet-mapping>-->
 
 <!--    <welcome-file-list>-->
-<!--        <welcome-file>login.jsp</welcome-file>-->
+<!--        <welcome-file>register.jsp</welcome-file>-->
 <!--    </welcome-file-list>-->
 
 <!--    <session-config>-->
@@ -32,5 +32,15 @@
         <servlet-name>VerifyEmailServlet</servlet-name>
         <url-pattern>/verify</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MultiQueryServlet</servlet-name>
+        <servlet-class>com.example.project.MultiQueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MultiQueryServlet</servlet-name>
+        <url-pattern>/runQueries</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

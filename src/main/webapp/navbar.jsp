@@ -10,45 +10,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Navbar</title>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="book.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="image.css">
+    <link rel="stylesheet" href="about.css">
+<%--    <link rel="stylesheet" href="pricing.css">--%>
+
 </head>
 <body>
 <!-- navbar -->
 
-    <div class="nav">
+<div class="nav">
     <ul>
-        <li><a href="#"><pre>
-        Contact: 9812345678
-        email:hotel@123gmail.com
-      </pre> </a></li>
-        <!-- <li><a href="#">About</a></li> -->
-        <!-- <li><a href="#">Services</a></li> -->
-        <li><a href="#"><pre>
-        HOTEl SRIKHANDA
-        Battishputali,Kathmandu
-      </pre> </a></li>
-        <li><a href="login.jsp"> <input type="submit" value="BOOK" class="book"> </a></li>
-        <a href="#"><img src="Location.png" alt="Logo" class="logo"></a>
+        <li><a href="navbar.jsp"><pre>
+                 HOTEl SRIKHANDA
+                 Battishputali,Kathmandu
+</pre> </a></li>
+        <li><a href="price.jsp">Price</a></li>
+        <li><a href="register.jsp"> <input type="submit" value="BOOK " class="book"> </a></li>
+        <li><a href="adminlogin.jsp">Admin</a></li>
     </ul>
-    </div>
+</div>
 
 
 <%--text image--%>
-<div class="container">
-    <img src="room1.jpg" alt="Background Image" class="background-image">
-    <div class="overlay">
-        <img src="room.png" alt="Logo" class="logo">
-        <h1>"best hotel in kathmandu.<br>customer satisfaction is<br>our motto"</h1>
+
+<%--<div class="container">--%>
+<%--    <img src="hotel1.jpeg" alt="Background Image" class="background-image">--%>
+<%--    <div class="overlay">--%>
+<%--        <h1>"Best hotel in Kathmandu.<br>Customer satisfaction is<br>our motto"</h1>--%>
+<%--    </div>--%>
+<%--</div>--%>
+
+<%--about us--%>
+<div class="about"><p>About Hotel</p></div>
+<div class="container1">
+    <div class="image">
+        <img src="hotel6.jpg" alt="Hyatt Regency Kathmandu">
+    </div>
+    <div class="text">
+        <h2>A Five Star Hotel Where Luxury Meets Culture</h2>
+        <p>Set on 2 acres of landscaped grounds, Hotel Srikhanda Kathmandu is a luxury five-star hotel
+            designed in traditional style architecture, ideally located only 4 kilometres away from
+            the international airport. Situated in a city with a plethora of ancient sites and fascinating
+            architecture, our hotel is a gateway to the city’s top attractions like Boudhanath, Pashupatinath,
+            Basantapur, Thamel, Bhaktapur Durbar Square, Patan Durbar Square and much more. You not only
+            experience luxurious hospitality, but you also get a cultural fest while at Hotel Srikhanda.</p>
     </div>
 </div>
 
+<div class="container1">
+    <div class="text">
+        <h2>Weddings & Celebrations</h2>
+        <p>Our hotel provides an exquisite wedding location, offering exceptional service, facilities, theme-party facilities, and delicious cuisine to meet your needs.</p>
+    </div>
+    <div class="image">
+        <img src="hotel5.jpeg" alt="Hyatt Regency Kathmandu">
+    </div>
+</div>
+
+<div class="container1">
+    <div class="image">
+        <img src="hotel6.jpg" alt="Hyatt Regency Kathmandu">
+    </div>
+    <div class="text">
+        <h2>Meetings & Events</h2>
+        <p>Our hotel has over 950 square metres (10,100 square feet) of impressive meeting space, with numerous outdoor venues available within the hotel grounds.</p>
+    </div>
+</div>
+
+
 <%--featured amenities--%>
-    <hr>
     <hr>
     <hr>
 <main>
@@ -117,9 +154,12 @@
                 <i class="icon parking"></i>
                 <span>Parking: Complimentary On-Site Parking, Complimentary Valet Parking</span>
             </div>
+
         </div>
     </section>
 </main>
+
+
 
 <%--GALLERY--%>
 <style>
@@ -131,6 +171,7 @@
         flex-wrap: wrap;
         gap: 10px;
         justify-content: center;
+        padding-top: 4%;
     }
     .gallery-item {
         width: calc(33% - 20px);
@@ -138,13 +179,14 @@
     }
     .gallery-item img {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
         border-radius: 8px;
     }
-    .header {
+    .header h1 {
         text-align: center;
-        padding: 20px;
+        padding-top: 6%;
+
     }
     @media screen and (max-width: 768px) {
         .gallery-item {
@@ -175,16 +217,15 @@
         <img src="cashier.jpg" alt="Image 3">
     </div>
     <div class="gallery-item">
-        <img src="textimage.jpeg" alt="Image 4">
+        <img src="hotel3.avif" alt="Image 4">
     </div>
     <div class="gallery-item">
-        <img src="room.png" alt="Image 5">
+        <img src="hotel1.jpeg" alt="Image 5">
     </div>
     <div class="gallery-item">
-        <img src="room1.jpg" alt="Image 6">
+        <img src="hotel2.jpeg" alt="Image 6">
     </div>
 </div>
-
 
 
 <!-- footer -->
@@ -198,7 +239,7 @@
         Province 3, Nepal
         Tel: +977 1 4248999, 4240520
         Fax: +977 1 4227781, 4227782
-        reservation@yakandyeti.com.np
+        srikhanda@hotel.com.np
     </pre></li>
             <li><pre>
         Suites & Rooms
@@ -210,23 +251,30 @@
         The Presidential Suites
         </pre></li>
             <li><pre>
-        Conference & Events
-       Regal Ballroom
-       Regency Hall
-       Durbar Hall
-       Dynasty Hall
-       Crystal Hall
-       Senate & Viceroy
-       Weddings
-</pre></li>
-            <li><pre>
-        Culinary Delights
-        The Chimney
-        Spice Room
+        ENQUIRY
+        Hotel Srikhanda:Active: 9.30 AM - 6.00 PM NPT
+        +977-01-4511113, 4529820
+        ABC: +977 9851354455
+        XYZ: +977 9851355861
+        Email: <a href="#">hotelsrikhanda@gmail.com</a>
+        For 24Hrs Hotel Support
+        <a href="https://maps.app.goo.gl/uc2gXcBB2i8rGdf8A">Location</a>
 </pre> </li>
-        </ul></div>
+        </ul>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2024; Designed by <span class="designer">Shova</span></p>
+            </div>
+        </div>
+    </div>
 </div>
-
 
 </body>
 </html>

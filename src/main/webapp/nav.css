@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: "Times New Roman";
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Change from center to flex-start */
+    height: 100vh;
+
+
+}
+
+.navbar {
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    position: fixed; /* Ensure the navbar stays at the top */
+    top: 0;
+    left: 0;
+    font-size: 20px;
+
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: rgb(32, 47, 73);
+}
+
+/* Adjust the rest of the page content */
+.login-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin-top: 100px; /* Ensure it is below the fixed navbar */
+}
+
+.login-container h2 {
+    color: rgb(32, 47, 73);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form .loginbtn {
+    padding: 10px;
+    background-color: rgb(32, 47, 73);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form .loginbtn:hover {
+    background-color: rgb(32, 47, 73);
+}

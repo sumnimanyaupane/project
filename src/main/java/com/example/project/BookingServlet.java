@@ -15,23 +15,20 @@ public class BookingServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String numberofpeople = request.getParameter("numberofpeople");
-        String checkoutdate = request.getParameter("checkoutdate");
         String contact = request.getParameter("contact");
+        String nationality = request.getParameter("nationality");
+        String address = request.getParameter("address");
+        String fullname = request.getParameter("fullname");
 
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
         String roomtype = (String) session.getAttribute("roomtype");
         String checkindate = (String) session.getAttribute("checkindate");
+        String checkoutdate = (String) session.getAttribute("checkoutdate");
 
-        if (username == null) {
-            response.sendRedirect("login.jsp");
-            return;
-        }
 
-        if (roomtype == null) {
-            response.sendRedirect("RoomChecking.jsp");
-            return;
-        }
+//        if (roomtype == null) {
+//            response.sendRedirect("RoomChecking.jsp");
+//        }
 
 
         String URL = "jdbc:postgresql://localhost:5432/postgres";
@@ -42,27 +39,32 @@ public class BookingServlet extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
           Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            String sql = "INSERT INTO booking (numberofpeople,checkindate,checkoutdate,username,roomtype,contact) VALUES (?,?,?,?,?,?)";
+            String sql = "INSERT INTO booking (numberofpeople,checkindate,checkoutdate,roomtype,contact,address,nationality,fullname) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, numberofpeople);
             preparedStatement.setDate(2, Date.valueOf(checkindate));
             preparedStatement.setDate(3, Date.valueOf(checkoutdate));
-            preparedStatement.setString(4, username);
-            preparedStatement.setString(5, roomtype);
-            preparedStatement.setString(6, contact);
+            preparedStatement.setString(4, roomtype);
+            preparedStatement.setString(5, contact);
+            preparedStatement.setString(6, address);
+            preparedStatement.setString(7, nationality);
+            preparedStatement.setString(8, fullname);
+
 
             int rows = preparedStatement.executeUpdate();
             if (rows > 0) {
-                response.sendRedirect("status.jsp");
+                response.sendRedirect("navbar.jsp");
             } else {
-                out.println("<h2>error!!!</h2>");
+                request.setAttribute("errorMessage", "invalid credentials");
+                request.getRequestDispatcher("RoomBooking.jsp").forward(request, response);
             }
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
+
     }
 }
 

@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: shova
-  Date: 25/05/2024
-  Time: 8:59 am
+  Date: 27/06/2024
+  Time: 5:55 pm
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
-<%@ include file="nav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +19,23 @@
             min-height: 100vh;
             background-color: #f0f0f0;
             margin: 0;
+        }
+        nav {
+            width: 100%;
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
         }
         table {
             width: 50%;
@@ -52,6 +68,14 @@
     </style>
 </head>
 <body>
+<nav>
+    <a href="navbar.jsp">Home</a>
+
+    <a href="Admin1.jsp">Booking Page</a>
+    <pre>Hotel Srikhanda
+        Battisputali,Kathmandu
+    </pre>
+</nav>
 <h1>Room List</h1>
 <table>
     <thead>
@@ -99,7 +123,7 @@
     </tbody>
 </table>
 <form action="AdminTableBooking.jsp">
-    <input type="submit" value="Go to booking table" class="loginbtn">
+<%--    <input type="submit" value="Continue" class="loginbtn">--%>
 </form>
 </body>
 </html>

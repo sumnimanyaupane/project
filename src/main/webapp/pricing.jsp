@@ -17,13 +17,13 @@
 <body>
 <div class="container mt-6">
     <p class="text1">
-      DIFFERENT VARIETIES OF SINGLE BEDROOM AND PRICING SYSTEM </p>
+      DIFFERENT VARIETIES ROOMS AND PRICING SYSTEM </p>
     <hr></div>
 <div class="row">
     <div class="col-sm-6 mb-4 mb-sm-0">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">single bed room1</h5>
+                <h5 class="card-title">single bed room</h5>
                 <pre class="card-text">1 guest.
           Rs.2000 per night
         </pre>
@@ -34,7 +34,7 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">single bed room2</h5>
+                <h5 class="card-title">Double bed room</h5>
                 <pre class="card-text">1 guest.
           Rs.1000 per night
         </pre>

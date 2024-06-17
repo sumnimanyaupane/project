@@ -1,8 +1,8 @@
 body{
     margin:0;
     padding:0;
-    box-sizing: border-box;
-    background-color:blue;
+    /*box-sizing: border-box;*/
+    /*background-color:blue;*/
 }
 
 .f1{
@@ -14,7 +14,8 @@ body{
     height:100px;
     font-family: Poppins;
     color:aliceblue;
-
+    box-sizing: border-box;
+    /*background-color:blue;*/
 
 }
 .first{
@@ -118,7 +119,7 @@ p.text1 {
 
 }
 .row{
-    /* background-image: url(image.jpg); */
+     background-image: url(hotel6.jpg);
     padding-top: 50px;
 }
 .card1 {
@@ -130,3 +131,4 @@ p.text1 {
     transform: scale(1.1);
 
 }
+

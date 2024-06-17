@@ -1,63 +1,44 @@
 <%--
   Created by IntelliJ IDEA.
   User: shova
-  Date: 25/05/2024
-  Time: 8:59 am
+  Date: 25/06/2024
+  Time: 8:09 pm
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
-<%@ include file="nav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Room List</title>
+    <title>information details</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
         table {
             width: 50%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: white;
         }
         table, th, td {
-            border: 3px solid #4CAF50;
+            border: 2px solid black;
         }
         th, td {
             padding: 15px;
             text-align: left;
         }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .loginbtn {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .loginbtn:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
-<h1>Room List</h1>
+<h1>information details</h1>
 <table>
     <thead>
     <tr>
-        <th>Room Type</th>
-        <th></th>
+        <th>numberofpeople</th>
+        <th>checkindate</th>
+        <th>checkoutdate</th>
+        <th>username</th>
+        <th>roomtype</th>
+        <th>contact</th>
+        <th>image</th>
+        <th>address</th>
+        <th>nationality</th>
+        <th>delete</th>
     </tr>
     </thead>
     <tbody>
@@ -71,16 +52,25 @@
         String PASSWORD = "postgres";
 
         try {
-            Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM checking");
 
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection(URL,USER,PASSWORD);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM booking where username=?");
+//            stmt.setString(1,username);
             while (rs.next()) {
+//
     %>
     <tr>
+        <td><%= rs.getString("numberofpeople") %></td>
+        <td><%= rs.getString("checkindate") %></td>
+        <td><%= rs.getString("checkoutdate") %></td>
+        <td><%= rs.getString("username") %></td>
         <td><%= rs.getString("roomtype") %></td>
-        <td><a href="#">edit/delete</a></td>
+        <td><%= rs.getString("contact") %></td>
+        <td><%= rs.getString("image") %></td>
+        <td><%= rs.getString("address") %></td>
+        <td><%= rs.getString("nationality") %></td>
     </tr>
     <%
             }
@@ -98,9 +88,7 @@
     %>
     </tbody>
 </table>
-<form action="AdminTableBooking.jsp">
-    <input type="submit" value="Go to booking table" class="loginbtn">
-</form>
 </body>
 </html>
+
 
