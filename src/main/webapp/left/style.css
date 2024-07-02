@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.room-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+}
+
+.room-card img {
+    width: 100%;
+    height: auto;
+}
+
+.room-details {
+    padding: 15px;
+}
+
+.room-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.room-description {
+    margin: 10px 0;
+    color: #555;
+}
+
+.view-details {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.rates {
+    margin: 10px 0;
+}
+
+.rates span {
+    display: block;
+}
+
+.select-book {
+    display: block;
+    background-color: #ffc107;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}

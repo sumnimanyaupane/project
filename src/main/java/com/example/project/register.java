@@ -43,7 +43,7 @@ public class register extends HttpServlet {
 
             if (rows > 0) {
                 HttpSession session = request.getSession();
-                response.sendRedirect("RoomChecking.jsp");
+                response.sendRedirect("event.jsp");
             } else {
                 request.setAttribute("errorMessage", "Invalid email or password");
                 request.getRequestDispatcher("register.jsp").forward(request, response);

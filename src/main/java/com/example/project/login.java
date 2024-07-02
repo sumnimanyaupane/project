@@ -26,7 +26,7 @@ public class login extends HttpServlet {
 
         if (validate(email, password)) {
             HttpSession session = request.getSession();
-            response.sendRedirect("RoomChecking.jsp");
+            response.sendRedirect("event.jsp");
         }
         else {
             request.setAttribute("errorMessage", "Invalid email or password");

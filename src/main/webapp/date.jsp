@@ -14,7 +14,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: gainsboro;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,7 +27,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #f9f9f9;
+            background-color: whitesmoke;
             justify-content: center;
             align-items: center;
         }

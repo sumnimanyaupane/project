@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /*padding: 20px;*/
+    padding-left: 150px;
+    padding-top: 180px;
+}
+
+.food-form {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.food-form h2, .food-form h3 {
+    margin-bottom: 10px;
+}
+
+.food-form input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+.food-form input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.food-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.image-container {
+    flex: 1;
+    text-align: right;
+    padding-top: 100px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}

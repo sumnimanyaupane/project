@@ -14,7 +14,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: gainsboro;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,10 +23,10 @@
         }
 
         .login-container {
-            background-color: #fff;
+            background-color:whitesmoke;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding-top: 20px;
             width: 400px;
             text-align: center;
         }
@@ -73,7 +73,7 @@
 <div class="login-container">
     <h2>Enter your Personal Details:</h2>
     <p>Selected rooms are available on the selected dates. Enter the further details to confirm booking.</p>
-    <form class="login-form" action="BookingServlet" method="post">
+    <form class="login-form" action="BookingServlet" method="post" onsubmit="return validateForm()">
         <label for="fullname">Fullname:</label>
         <input type="text" id="fullname" name="fullname" required>
 
@@ -100,5 +100,19 @@
         out.println("<p style='color:red'>" + errorMessage + "</p>");
     }
 %>
+
+<script>
+    function validateForm() {
+        var contactField = document.getElementById('contact');
+        var contactPattern = /^[0-9]{10}$/;
+
+        if (!contactPattern.test(contactField.value)) {
+            alert("Please enter a valid 10-digit contact number.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 </body>
 </html>

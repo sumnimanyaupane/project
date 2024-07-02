@@ -98,8 +98,12 @@
     %>
     </tbody>
 </table>
+<form action="adminDashboard.jsp">
+    <input type="submit" value="back" class="loginbtn">
+</form>
+
 <form action="AdminTableBooking.jsp">
-    <input type="submit" value="Go to booking table" class="loginbtn">
+    <input type="submit" value="next" class="loginbtn">
 </form>
 </body>
 </html>

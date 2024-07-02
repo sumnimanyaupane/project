@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Information Details</title>
+    <title>Room Booking Details</title>
     <style>
         body {
             display: flex;
@@ -102,5 +102,11 @@
     %>
     </tbody>
 </table>
+<form action="AdminTableChecking.jsp">
+    <input type="submit" value="back" class="loginbtn">
+</form>
+<form action="adminEvent.jsp">
+    <input type="submit" value="next" class="loginbtn">
+</form>
 </body>
 </html>

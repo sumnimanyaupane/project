@@ -65,8 +65,8 @@
 
 <div class="login-container">
     <h2>Admin Login</h2>
-    <form class="login-form" action="adminlogin" method="post">
-        <label for="email">email:</label>
+    <form class="login-form" action="adminlogin" method="post" onsubmit="return validateForm()">
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
         <label for="password">Password:</label>
@@ -76,6 +76,29 @@
     </form>
 </div>
 
+<script>
+    function validateForm() {
+        var emailField = document.getElementById('email');
+        var email = emailField.value;
+
+        // Basic email format check using regex
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+<%
+    String errorMessage = (String) request.getAttribute("errorMessage");
+    if (errorMessage != null) {
+        out.println("<p style='color:red'>" + errorMessage + "</p>");
+    }
+%>
 </body>
 </html>
 

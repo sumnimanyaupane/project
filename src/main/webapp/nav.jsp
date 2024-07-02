@@ -1,30 +1,36 @@
 <%--
   Created by IntelliJ IDEA.
   User: shova
-  Date: 27/06/2024
-  Time: 8:31 pm
+  Date: 28/06/2024
+  Time: 7:16 pm
   To change this template use File | Settings | File Templates.
 --%>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
     <link rel="stylesheet" href="nav.css">
-<%--    <link rel="stylesheet" href="footer.css">--%>
+    <%--    <link rel="stylesheet" href="footer.css">--%>
 </head>
 <body>
 <nav class="navbar">
     <ul>
-        <li><a href="navbar.jsp"><pre>
-                 HOTEl SRIKHANDA
+        <li><a href="navbar1.jsp"><pre>
+                 HOTEl Moon
                  Battishputali,Kathmandu
 </pre> </a></li>
-        <li><a href="price.jsp"><pre>
-            Price
+<%--        <li><a href="price.jsp"><pre>--%>
+<%--            Price--%>
+<%--        </pre></a></li>--%>
+        <li><a href="register.jsp"><pre>
+            BOOK
         </pre></a></li>
-<%--        <li><a href="register.jsp"> <input type="submit" value="BOOK " class="book"> </a></li>--%>
+        <li><a href="gallery.jsp"><pre>
+           PHOTOS
+        </pre></a></li>
+        <%--        <li><a href="register.jsp"> <input type="submit" value="BOOK " class="book"> </a></li>--%>
         <li><a href="adminlogin.jsp"><pre>
             Admin
         </pre></a></li>
@@ -50,4 +56,3 @@
 <%--        </div>--%>
 </body>
 </html>
-

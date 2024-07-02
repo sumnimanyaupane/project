@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: gainsboro;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,12 +22,13 @@
         }
 
         .login-container {
-            background-color: #fff;
+            background-color:floralwhite;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             width: 300px;
             text-align: center;
+            /*background-image:'blue.jpg' ;*/
         }
 
         .login-container h2 {
@@ -65,7 +66,7 @@
 
     <div class="login-container">
         <h2>LOGIN</h2>
-        <form class="login-form" action="login" method="post">
+        <form class="login-form" action="login" method="post" onsubmit="return validateForm()">
 
             <label for="email">email:</label>
             <input type="email" id="email" name="email" required>
@@ -76,6 +77,22 @@
 
         </form>
     </div>
+    <script>
+        function validateForm() {
+            var emailField = document.getElementById('email');
+            var email = emailField.value;
+
+            // Basic email format check using regex
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 
     <%
         String errorMessage = (String) request.getAttribute("errorMessage");

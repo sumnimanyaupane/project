@@ -9,11 +9,11 @@
 <%@ include file="nav.jsp" %>
 <head>
     <title>Login</title>
-
+    <link rel="stylesheet" href="image2.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: floralwhite;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,7 +22,7 @@
         }
 
         .login-container {
-            background-color: #fff;
+            background-color: gainsboro;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -78,6 +78,22 @@
 
     </form>
 </div>
+<script>
+    function validateForm() {
+        var emailField = document.getElementById('email');
+        var email = emailField.value;
+
+        // Basic email format check using regex
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 
 <%
     String errorMessage = (String) request.getAttribute("errorMessage");
@@ -85,5 +101,6 @@
         out.println("<p style='color:red'>" + errorMessage + "</p>");
     }
 %>
+
 </body>
 </html>

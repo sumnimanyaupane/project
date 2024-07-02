@@ -26,9 +26,9 @@ public class BookingServlet extends HttpServlet {
         String checkoutdate = (String) session.getAttribute("checkoutdate");
 
 
-//        if (roomtype == null) {
-//            response.sendRedirect("RoomChecking.jsp");
-//        }
+        if (roomtype == null) {
+            response.sendRedirect("RoomChecking.jsp");
+        }
 
 
         String URL = "jdbc:postgresql://localhost:5432/postgres";
@@ -53,7 +53,7 @@ public class BookingServlet extends HttpServlet {
 
             int rows = preparedStatement.executeUpdate();
             if (rows > 0) {
-                response.sendRedirect("navbar.jsp");
+                response.sendRedirect("Success.jsp");
             } else {
                 request.setAttribute("errorMessage", "invalid credentials");
                 request.getRequestDispatcher("RoomBooking.jsp").forward(request, response);
